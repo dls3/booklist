@@ -7,9 +7,6 @@ class BooksController < ApplicationController
       format.html
       format.text
 
-      format.csv do
-        render plain: @books.generate_csv(@books)
-
       format.json do
         render json: @books.map { |book|
         { title: book.title,
@@ -18,7 +15,11 @@ class BooksController < ApplicationController
         }
       }
       end
+
+      format.csv do
+        render plain: @books.generate_csv(@books)
       end
+
     end
   end
 end
