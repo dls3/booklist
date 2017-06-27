@@ -2,7 +2,8 @@
 
 <ul class="monsters">
   <% @books.each do |book| %>
-    <h1><%= book.title %>, by <%= book.author %></h1>
-    <h4>I have read this already: <%= book.already_read %></h4>
+    <h4><%= book.id %></h4>
+    <h2><%= book.title %>,  by  <%= book.author %></h2>
+    <h4>I have read this already: <%= book.already_read %></h4><br>
   <% end %>
 </ul>
