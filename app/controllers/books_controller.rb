@@ -6,7 +6,15 @@ class BooksController < ApplicationController
     respond_to do |format|
       format.html
       format.text
-    end
-  end
 
+      format.json do
+        render json: @books.map { |book|
+        { title: book.title,
+          author: book.author
+        }
+      }
+      end
+    end
+
+  end
 end
