@@ -1,5 +1,7 @@
 <% @books.each do |book| %>
-  <%= book.title %>, by <%= book.author %>
+  <%= book.id %>.
+  Title: <%= book.title %>
+  Author: <%= book.author %>
   I have read this already: <%= book.already_read %>
-  
+
 <% end %>
